@@ -34,3 +34,8 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
 
 - v1.0.0
   - Initial release
+- v1.1.0
+  - Don't assume websites are located at root
+  - Use Poppins instead of Google Sans
+  - Fix image links being inverted
+  - Don't hide menus on smaller screens
