@@ -24,12 +24,14 @@ p {
 	margin-bottom: 0.25em;
 }
 
-a {
+a,
+a img {
 	color: initial;
 	background-color: white;
 }
 
-a:hover {
+a:hover,
+a:hover img {
 	filter: invert(1);
 }
 
