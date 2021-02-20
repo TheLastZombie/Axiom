@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Home",
+		"folder": "home",
+		"host": "example.com",
+		"pages": [
+			{
+				"title": "Home",
+				"file": "index",
+				"hidden": false
+			}
+		]
+	}
+]

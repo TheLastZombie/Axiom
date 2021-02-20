@@ -1,0 +1,10 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0",
+    "marked": "^2.0.0"
+  }
+}
