@@ -48,7 +48,7 @@ config.forEach(x => {
       const outtext = index
         .replace('<!-- LEFT -->', config.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
         .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
-        .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="/' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
+        .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
 
       fs.writeFileSync(outfile, outtext)
     })
