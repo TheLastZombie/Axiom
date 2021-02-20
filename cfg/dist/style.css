@@ -36,12 +36,12 @@ a:hover img {
 }
 
 @media (max-width: 750px) {
-	#left,
-	#right {
-		display: none;
+	body {
+		flex-direction: column;
 	}
 
 	#center {
 		max-width: calc(100vw - 100px);
+		margin: 50px 0;
 	}
 }
