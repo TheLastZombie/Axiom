@@ -71,6 +71,11 @@ ol {
 		flex-direction: column;
 	}
 
+	#left a,
+	#right a {
+		display: block;
+	}
+
 	#center {
 		max-width: calc(100vw - 100px);
 		margin: 50px 0;
