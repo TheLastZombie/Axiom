@@ -55,6 +55,15 @@ a:hover img {
 	filter: invert(1);
 }
 
+#center a:hover {
+	display: inline-block;
+	margin: 1em auto;
+}
+
+#center a:hover img {
+	margin: 0;
+}
+
 code {
 	text-transform: none;
 }
