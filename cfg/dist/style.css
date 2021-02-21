@@ -22,7 +22,12 @@ body {
 	margin-top: 25px;
 }
 
-#bottom img {
+#bottom a {
+	display: inline-block;
+	margin-right: 0.5em;
+}
+
+#bottom a img {
 	height: 2em;
 	width: auto;
 }
