@@ -3,7 +3,6 @@ body {
 	font-family: "Poppins";
 	width: max-content;
 	margin: 50px auto;
-	text-transform: lowercase;
 }
 
 #left a,
@@ -53,10 +52,6 @@ a img {
 a:hover,
 a:hover img {
 	filter: invert(1);
-}
-
-code {
-	text-transform: none;
 }
 
 ul,
