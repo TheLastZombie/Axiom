@@ -63,3 +63,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Revert commit e87f544
 - v2.5.0
   - Don't convert text to lowercase
+- v2.6.0
+  - Add rel-me configuration value
