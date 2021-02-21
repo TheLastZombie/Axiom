@@ -17,7 +17,7 @@ console.log('Reading configuration file...')
 
 config = JSON.parse(fs.readFileSync(config))
 
-config.forEach(x => {
+config.sites.forEach(x => {
   console.log('Building ' + x.title + ' (' + x.folder + ')...')
 
   if (fs.existsSync(path.resolve(output, x.folder))) {
@@ -46,8 +46,9 @@ config.forEach(x => {
       console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
 
       const outtext = index
-        .replace('<!-- LEFT -->', config.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
+        .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
         .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
+        .replace('<!-- BOTTOM -->', config.footer.map(z => '<a href="' + z.link + '" title="' + z.title.toLowerCase() + '"><img src="' + z.icon + '" alt="' + z.title.toLowerCase() + '"></a>').join(''))
         .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
 
       fs.writeFileSync(outfile, outtext)

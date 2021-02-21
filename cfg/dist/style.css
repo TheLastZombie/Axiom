@@ -18,6 +18,15 @@ body {
 	margin: 0 50px;
 }
 
+#bottom {
+	margin-top: 25px;
+}
+
+#bottom img {
+	height: 2em;
+	width: auto;
+}
+
 h2,
 p {
 	margin: 0;

@@ -1,14 +1,23 @@
-[
-	{
-		"title": "Home",
-		"folder": "home",
-		"host": "example.com",
-		"pages": [
-			{
-				"title": "Home",
-				"file": "index",
-				"hidden": false
-			}
-		]
-	}
-]
+{
+	"sites": [
+		{
+			"title": "Home",
+			"folder": "home",
+			"host": "example.com",
+			"pages": [
+				{
+					"title": "Home",
+					"file": "index",
+					"hidden": false
+				}
+			]
+		}
+	],
+	"footer": [
+		{
+			"title": "Link",
+			"link": "https://example.com",
+			"icon": "https://fonts.gstatic.com/s/i/materialicons/home/v10/24px.svg"
+		}
+	]
+}

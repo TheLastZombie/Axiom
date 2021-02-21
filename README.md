@@ -21,10 +21,10 @@ npm install
 1. Add sites as subdirectories to the `src` directory.
 2. Add pages as Markdown files to the respective site's directory.
 3. Add any assets by placing them inside the site's directory.
-4. Add your sites and pages to the `cfg/config.json` file.
+4. Add your sites, pages and footer links to the `cfg/config.json` file.
 5. Run `npm start` to build your sites into the `dist` directory.
 
-A simple example with one site (home) and one page (index) has been included in this repository. It is highly recommended to create an index file; Axiom will not do this by itself.
+A simple example with one site (home), one page (index) and one link (link) has been included in this repository. It is highly recommended to create an index file; Axiom will not do this by itself.
 
 To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - The comments within `cfg/index.html` will be replaced with the actual menus and content.
