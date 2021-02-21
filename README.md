@@ -47,3 +47,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Increase footer link margins
 - v2.2.0
   - Generate title HTML tag
+- v2.2.1
+  - Fix overflowing images
