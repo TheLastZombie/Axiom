@@ -55,6 +55,10 @@ a:hover img {
 	filter: invert(1);
 }
 
+code {
+	text-transform: none;
+}
+
 ul,
 ol {
 	margin: 0.5em auto;
