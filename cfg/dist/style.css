@@ -100,3 +100,11 @@ ol {
 		background-color: white;
 	}
 }
+
+@media print {
+	#left,
+	#bottom,
+	#right {
+		display: none;
+	}
+}
