@@ -55,3 +55,7 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Add charset and viewport tags
   - Make links fill width on smaller screens
   - Hide menus when printing
+- v2.4.0
+  - Align left menu to right side
+  - Don't convert code blocks to lowercase
+  - Remove unwanted image underline on hover
