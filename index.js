@@ -42,10 +42,13 @@ config.sites.forEach(x => {
     filesX.forEach(y => {
       const infile = path.resolve(input, x.folder, y)
       const outfile = path.resolve(output, x.folder, path.parse(y).name + '.html')
+      let title = x.pages.filter(z => z.file === path.parse(y).name)[0]
+      title = title ? title.title.toLowerCase() : path.parse(y).name
 
       console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
 
       const outtext = index
+        .replace('<!-- TITLE -->', title)
         .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
         .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
         .replace('<!-- BOTTOM -->', config.footer.map(z => '<a href="' + z.link + '" title="' + z.title.toLowerCase() + '"><img src="' + z.icon + '" alt="' + z.title.toLowerCase() + '"></a>').join(''))
