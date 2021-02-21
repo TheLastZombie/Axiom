@@ -39,3 +39,7 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Use Poppins instead of Google Sans
   - Fix image links being inverted
   - Don't hide menus on smaller screens
+- v2.0.0
+  - Support prefers-color-scheme
+  - Style selections
+  - Breaking: Add footer links
