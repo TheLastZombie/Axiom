@@ -18,6 +18,11 @@ body {
 	margin: 0 50px;
 }
 
+#center img {
+	max-width: 100%;
+	margin: 1em auto;
+}
+
 #bottom {
 	margin-top: 25px;
 }
