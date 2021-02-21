@@ -61,3 +61,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Remove unwanted image underline on hover
 - v2.4.1
   - Revert commit e87f544
+- v2.5.0
+  - Don't convert text to lowercase
