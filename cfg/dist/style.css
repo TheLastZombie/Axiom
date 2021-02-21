@@ -55,6 +55,11 @@ a:hover img {
 	filter: invert(1);
 }
 
+ul,
+ol {
+	margin: 0.5em auto;
+}
+
 ::selection,
 ::-moz-selection {
 	color: white;
