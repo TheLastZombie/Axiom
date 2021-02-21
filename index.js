@@ -51,7 +51,7 @@ config.sites.forEach(x => {
         .replace('<!-- TITLE -->', title)
         .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
         .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
-        .replace('<!-- BOTTOM -->', config.footer.map(z => '<a href="' + z.link + '" title="' + z.title + '"><img src="' + z.icon + '" alt="' + z.title + '"></a>').join(''))
+        .replace('<!-- BOTTOM -->', config.footer.map(z => '<a' + (z['rel-me'] ? ' rel="me" ' : ' ') + 'href="' + z.link + '" title="' + z.title + '"><img src="' + z.icon + '" alt="' + z.title + '"></a>').join(''))
         .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
 
       fs.writeFileSync(outfile, outtext)

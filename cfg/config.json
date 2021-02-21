@@ -17,7 +17,8 @@
 		{
 			"title": "Link",
 			"link": "https://example.com",
-			"icon": "https://fonts.gstatic.com/s/i/materialicons/home/v10/24px.svg"
+			"icon": "https://fonts.gstatic.com/s/i/materialicons/home/v10/24px.svg",
+			"rel-me": false
 		}
 	]
 }
