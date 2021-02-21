@@ -59,3 +59,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Align left menu to right side
   - Don't convert code blocks to lowercase
   - Remove unwanted image underline on hover
+- v2.4.1
+  - Revert commit e87f544
