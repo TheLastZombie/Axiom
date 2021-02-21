@@ -67,3 +67,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Add rel-me configuration value
 - v2.6.1
   - Fix iframe margins
+- v2.7.0
+  - Remove prefers-color-scheme support
