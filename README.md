@@ -43,3 +43,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Support prefers-color-scheme
   - Style selections
   - Breaking: Add footer links
+- v2.1.0
+  - Increase footer link margins
