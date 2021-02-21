@@ -49,3 +49,9 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Generate title HTML tag
 - v2.2.1
   - Fix overflowing images
+- v2.3.0
+  - Fix footer icon margins
+  - Fix list margins
+  - Add charset and viewport tags
+  - Make links fill width on smaller screens
+  - Hide menus when printing
