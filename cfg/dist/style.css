@@ -82,6 +82,12 @@ ol {
 	}
 }
 
+@media (min-width: 751px) {
+	#left {
+		text-align: right;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: black;
