@@ -35,6 +35,12 @@ a:hover img {
 	filter: invert(1);
 }
 
+::selection,
+::-moz-selection {
+	color: white;
+	background-color: black;
+}
+
 @media (max-width: 750px) {
 	body {
 		flex-direction: column;
@@ -56,5 +62,11 @@ a:hover img {
 	a img {
 		color: white;
 		background-color: black;
+	}
+
+	::selection,
+	::-moz-selection {
+		color: black;
+		background-color: white;
 	}
 }
