@@ -65,3 +65,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Don't convert text to lowercase
 - v2.6.0
   - Add rel-me configuration value
+- v2.6.1
+  - Fix iframe margins
