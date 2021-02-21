@@ -88,25 +88,6 @@ ol {
 	}
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background-color: black;
-		color: white;
-	}
-
-	a,
-	a img {
-		color: white;
-		background-color: black;
-	}
-
-	::selection,
-	::-moz-selection {
-		color: black;
-		background-color: white;
-	}
-}
-
 @media print {
 	#left,
 	#bottom,
