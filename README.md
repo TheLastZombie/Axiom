@@ -69,3 +69,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Fix iframe margins
 - v2.7.0
   - Remove prefers-color-scheme support
+- v2.7.1
+  - Fix inverted links when using Dark Reader
