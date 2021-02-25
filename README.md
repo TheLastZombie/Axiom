@@ -75,3 +75,5 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Fix inverted links when using Dark Reader
 - v2.8.0
   - Support generation of GMI files
+- v2.8.1
+  - Replace .html with .gmi in GMI files
