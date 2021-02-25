@@ -7,6 +7,7 @@ Axiom is a simple static site generator powering my personal website and its sub
 - Optimized for easily navigating between multiple domains.
 - A simple, straight-forward theme inspired by [Oscean](https://wiki.xxiivv.com/site/oscean.html).
 - Automatic minification of HTML files via [HTML Minifier](https://kangax.github.io/html-minifier/).
+- Conversion to and generation of GMI files for [Gemini](https://gemini.circumlunar.space/).
 
 ## Installation
 
@@ -14,6 +15,7 @@ Axiom is a simple static site generator powering my personal website and its sub
 git clone https://github.com/TheLastZombie/Axiom
 cd Axiom
 npm install
+pip install -r requirements.txt
 ```
 
 ## Usage

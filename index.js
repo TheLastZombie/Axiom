@@ -1,5 +1,6 @@
 console.log('Initializing modules and variables...')
 
+const childProcess = require('child_process')
 const fs = require('fs')
 const path = require('path')
 
@@ -9,7 +10,8 @@ const marked = require('marked')
 const input = path.resolve('src')
 const output = path.resolve('dist')
 const assets = path.resolve('cfg', 'dist')
-const index = fs.readFileSync(path.resolve('cfg', 'index.html')).toString()
+const idxHTML = fs.readFileSync(path.resolve('cfg', 'index.html')).toString()
+const idxGMI = fs.readFileSync(path.resolve('cfg', 'index.gmi')).toString()
 
 let config = path.resolve('cfg', 'config.json')
 
@@ -47,12 +49,32 @@ config.sites.forEach(x => {
 
       console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
 
-      const outtext = index
+      const outtext = idxHTML
         .replace('<!-- TITLE -->', title)
         .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
         .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
         .replace('<!-- BOTTOM -->', config.footer.map(z => '<a' + (z['rel-me'] ? ' rel="me" ' : ' ') + 'href="' + z.link + '" title="' + z.title + '"><img src="' + z.icon + '" alt="' + z.title + '"></a>').join(''))
         .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
+
+      fs.writeFileSync(outfile, outtext)
+    })
+
+    console.log('  Generating ' + filesX.length + ' GMI documents from Markdown files...')
+
+    filesX.forEach(y => {
+      const infile = path.resolve(input, x.folder, y)
+      const outfile = path.resolve(output, x.folder, path.parse(y).name + '.gmi')
+      let title = x.pages.filter(z => z.file === path.parse(y).name)[0]
+      title = title ? title.title : path.parse(y).name
+
+      console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
+
+      const outtext = idxGMI
+        .replace('<!-- TITLE -->', title)
+        .replace('<!-- LEFT -->', config.sites.map(z => '=> gemini://' + z.host + ' ' + z.title).join('\n'))
+        .replace('<!-- CENTER -->', childProcess.execFileSync('md2gemini', ['-l', 'copy', infile]).toString().trim())
+        .replace('<!-- BOTTOM -->', config.footer.map(z => '=> ' + z.link + ' ' + z.title).join('\n'))
+        .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '=> ' + z.file + '.gmi' + ' ' + z.title).join('\n'))
 
       fs.writeFileSync(outfile, outtext)
     })
