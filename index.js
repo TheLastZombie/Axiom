@@ -72,7 +72,7 @@ config.sites.forEach(x => {
       const outtext = idxGMI
         .replace('<!-- TITLE -->', title)
         .replace('<!-- LEFT -->', config.sites.map(z => '=> gemini://' + z.host + ' ' + z.title).join('\n'))
-        .replace('<!-- CENTER -->', childProcess.execFileSync('md2gemini', ['-l', 'copy', infile]).toString().trim())
+        .replace('<!-- CENTER -->', childProcess.execFileSync('md2gemini', ['-l', 'copy', infile]).toString().replace(/\.html/g, '.gmi').trim())
         .replace('<!-- BOTTOM -->', config.footer.map(z => '=> ' + z.link + ' ' + z.title).join('\n'))
         .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '=> ' + z.file + '.gmi' + ' ' + z.title).join('\n'))
 
