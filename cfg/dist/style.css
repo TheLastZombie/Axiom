@@ -68,6 +68,7 @@ ol {
 
 @media (max-width: 750px) {
 	body {
+		margin: 25px auto;
 		flex-direction: column;
 	}
 
@@ -77,8 +78,8 @@ ol {
 	}
 
 	#center {
-		max-width: calc(100vw - 100px);
-		margin: 50px 0;
+		max-width: calc(100vw - 50px);
+		margin: 25px 0;
 	}
 }
 
