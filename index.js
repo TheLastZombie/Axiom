@@ -6,6 +6,7 @@ const path = require('path')
 
 const { minify } = require('html-minifier')
 const marked = require('marked')
+const UglifyJS = require('uglify-js')
 
 const input = path.resolve('src')
 const output = path.resolve('dist')
@@ -116,6 +117,22 @@ config.sites.forEach(x => {
       fs.writeFileSync(file, minify(fs.readFileSync(file).toString(), {
         collapseWhitespace: true
       }))
+      const sizepost = fs.statSync(file).size
+
+      console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
+    }
+  })
+
+  console.log('  Minifying JS files...')
+
+  fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
+    if (path.extname(y) === '.js') {
+      const file = path.resolve(output, x.folder, y)
+
+      console.log('    Minifying file ' + y + '...')
+
+      const sizepre = fs.statSync(file).size
+      fs.writeFileSync(file, UglifyJS.minify(fs.readFileSync(file).toString()).code)
       const sizepost = fs.statSync(file).size
 
       console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
