@@ -77,3 +77,8 @@ To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
   - Support generation of GMI files
 - v2.8.1
   - Replace .html with .gmi in GMI files
+- v2.9.0
+  - Minify HTML files with .htm extension
+  - Decrease margins on small screens
+  - Update package-lock.json to version 2
+  - Minify JS files with UglifyJS
