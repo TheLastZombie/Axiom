@@ -107,7 +107,7 @@ config.sites.forEach(x => {
   console.log('  Minifying HTML files...')
 
   fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
-    if (path.extname(y) === '.html') {
+    if (path.extname(y) === '.html' || path.extname(y) === '.htm') {
       const file = path.resolve(output, x.folder, y)
 
       console.log('    Minifying file ' + y + '...')
