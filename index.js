@@ -10,8 +10,8 @@ const UglifyJS = require('uglify-js')
 
 const input = path.resolve('src')
 const output = path.resolve('dist')
-const assets = path.resolve('cfg', 'dist')
-const idxHTML = fs.readFileSync(path.resolve('cfg', 'index.html')).toString()
+let assets = path.resolve('cfg', 'themes')
+let idxHTML = path.resolve('cfg', 'themes')
 const idxGMI = fs.readFileSync(path.resolve('cfg', 'index.gmi')).toString()
 
 let config = path.resolve('cfg', 'config.json')
@@ -19,6 +19,9 @@ let config = path.resolve('cfg', 'config.json')
 console.log('Reading configuration file...')
 
 config = JSON.parse(fs.readFileSync(config))
+
+assets = path.resolve(assets, config.theme, 'dist')
+idxHTML = fs.readFileSync(path.resolve(idxHTML, config.theme, 'index.html')).toString()
 
 config.sites.forEach(x => {
   console.log('Building ' + x.title + ' (' + x.folder + ')...')

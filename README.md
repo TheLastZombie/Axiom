@@ -6,6 +6,7 @@ Axiom is a simple static site generator powering my personal website and its sub
 
 - Optimized for easily navigating between multiple domains.
 - A simple, straight-forward theme inspired by [Oscean](https://wiki.xxiivv.com/site/oscean.html).
+- A more modern theme similar to the one used by [Caddy](https://caddyserver.com/docs/).
 - Automatic minification of HTML and JS files via [HTML Minifier](https://kangax.github.io/html-minifier/) and [UglifyJS](http://lisperator.net/uglifyjs/).
 - Conversion to and generation of GMI files for [Gemini](https://gemini.circumlunar.space/).
 
@@ -28,9 +29,9 @@ pip install -r requirements.txt
 
 A simple example with one site (home), one page (index) and one link (link) has been included in this repository. It is highly recommended to create an index file; Axiom will not do this by itself.
 
-To modify the default theme, have a look at `cfg/index.html` and `cfg/dist`.
-  - The comments within `cfg/index.html` will be replaced with the actual menus and content.
-  - Any files inside `cfg/dist` will be copied to every site's directory. CSS and JS files should be placed here.
+To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/theme/dist`.
+  - The comments within `index.html` will be replaced with the actual menus and content.
+  - Any files inside `dist` will be copied to every site's directory. CSS and JS files should be placed here.
 
 ## Changelog
 
