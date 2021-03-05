@@ -86,3 +86,5 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
 - v2.10.0
   - Support multiple themes
   - Add Caddy theme
+- v2.10.1
+  - Fix top margin for Caddy theme
