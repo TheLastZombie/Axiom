@@ -34,6 +34,10 @@ body {
 	box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, .15);
 }
 
+#center :first-child {
+	margin-top: 0;
+}
+
 #center img,
 #center iframe {
 	max-width: 100%;
@@ -59,7 +63,6 @@ h1 {
 	font-size: 3.75em;
 	text-align: center;
 	color: #0e3e5b;
-	margin: 0;
 	margin-bottom: 50px;
 }
 
