@@ -83,3 +83,6 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Decrease margins on small screens
   - Update package-lock.json to version 2
   - Minify JS files with UglifyJS
+- v2.10.0
+  - Support multiple themes
+  - Add Caddy theme
