@@ -88,3 +88,5 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Add Caddy theme
 - v2.10.1
   - Fix top margin for Caddy theme
+- v2.11.0
+  - Make menus stick to top of page when scrolling
