@@ -87,6 +87,13 @@ ol {
 	#left {
 		text-align: right;
 	}
+
+	#left,
+	#right {
+		align-self: flex-start;
+		position: sticky;
+		top: 50px;
+	}
 }
 
 @media print {

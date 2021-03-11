@@ -7,6 +7,13 @@ body {
 	background: #f1f4f5;
 }
 
+#left,
+#right {
+	align-self: flex-start;
+	position: sticky;
+	top: 50px;
+}
+
 #left p:first-child,
 #right p:first-child {
 	margin-top: 0;
