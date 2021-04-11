@@ -90,3 +90,6 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Fix top margin for Caddy theme
 - v2.11.0
   - Make menus stick to top of page when scrolling
+- v2.12.0
+  - Make all images full-width
+  - Update Marked to version 2.0.2
