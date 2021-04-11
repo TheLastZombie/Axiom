@@ -93,3 +93,5 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
 - v2.12.0
   - Make all images full-width
   - Update Marked to version 2.0.2
+- v2.13.0
+  - Increase footer icon margins
