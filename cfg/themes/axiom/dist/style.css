@@ -1,8 +1,9 @@
 body {
 	display: flex;
-	font-family: "Poppins";
+	font-family: "Inter";
 	width: max-content;
 	margin: 50px auto;
+	line-height: 1.5;
 }
 
 #left a,
