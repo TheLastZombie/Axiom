@@ -97,3 +97,8 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Increase footer icon margins
 - v2.14.0
   - Use Inter instead of Poppins as font
+- v3.0.0
+  - Breaking: Improve page title format
+  - Host Inter locally
+  - Update Marked to version 2.0.3
+  - Update UglifyJS to version 3.13.4

@@ -54,7 +54,7 @@ config.sites.forEach(x => {
       console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
 
       const outtext = idxHTML
-        .replace('<!-- TITLE -->', title)
+        .replace('<!-- TITLE -->', config.title + ' · ' + x.title + ' · ' + title)
         .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
         .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
         .replace('<!-- BOTTOM -->', config.footer.map(z => '<a' + (z['rel-me'] ? ' rel="me" ' : ' ') + 'href="' + z.link + '" title="' + z.title + '"><img src="' + z.icon + '" alt="' + z.title + '"></a>').join(''))
@@ -74,7 +74,7 @@ config.sites.forEach(x => {
       console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
 
       const outtext = idxGMI
-        .replace('<!-- TITLE -->', title)
+        .replace('<!-- TITLE -->', config.title + ' · ' + x.title + ' · ' + title)
         .replace('<!-- LEFT -->', config.sites.map(z => '=> gemini://' + z.host + ' ' + z.title).join('\n'))
         .replace('<!-- CENTER -->', childProcess.execFileSync('md2gemini', ['-l', 'copy', infile]).toString().replace(/\.html/g, '.gmi').trim())
         .replace('<!-- BOTTOM -->', config.footer.map(z => '=> ' + z.link + ' ' + z.title).join('\n'))
