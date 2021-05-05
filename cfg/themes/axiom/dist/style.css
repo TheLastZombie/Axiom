@@ -50,11 +50,17 @@ body {
 
 #bottom {
 	margin-top: 25px;
+	overflow-x: auto;
+	white-space: nowrap;
 }
 
 #bottom a {
 	display: inline-block;
 	margin-right: 1em;
+}
+
+#bottom a:last-child {
+	margin-right: 0;
 }
 
 #bottom a img {

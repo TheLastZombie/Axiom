@@ -102,3 +102,5 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Host Inter locally
   - Update Marked to version 2.0.3
   - Update UglifyJS to version 3.13.4
+- v3.1.0
+  - Add overflow to footer icons instead of line break
