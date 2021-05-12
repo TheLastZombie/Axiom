@@ -4,6 +4,7 @@ const childProcess = require('child_process')
 const fs = require('fs')
 const path = require('path')
 
+const CleanCSS = require('clean-css')
 const { minify } = require('html-minifier')
 const marked = require('marked')
 const UglifyJS = require('uglify-js')
@@ -120,6 +121,22 @@ config.sites.forEach(x => {
       fs.writeFileSync(file, minify(fs.readFileSync(file).toString(), {
         collapseWhitespace: true
       }))
+      const sizepost = fs.statSync(file).size
+
+      console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
+    }
+  })
+
+  console.log('  Minifying CSS files...')
+
+  fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
+    if (path.extname(y) === '.css') {
+      const file = path.resolve(output, x.folder, y)
+
+      console.log('    Minifying file ' + y + '...')
+
+      const sizepre = fs.statSync(file).size
+      fs.writeFileSync(file, new CleanCSS().minify(fs.readFileSync(file).toString()).styles)
       const sizepost = fs.statSync(file).size
 
       console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
