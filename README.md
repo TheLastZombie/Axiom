@@ -106,3 +106,7 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
 - v4.0.0
   - Minify CSS files with clean-css
   - Breaking: Remove Caddy theme
+- v4.1.0
+  - Specify document type
+  - Remove duplicated body tag
+  - Update dependencies
