@@ -118,3 +118,5 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Generate description from files
   - Specify icon size in HTML
   - Update Inter to 3.19
+- v5.0.1
+  - Update dependencies
