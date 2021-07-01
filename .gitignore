@@ -1,4 +1,7 @@
 dist/*
 !dist/.gitkeep
 
+src/*
+!src/home/index.md
+
 node_modules

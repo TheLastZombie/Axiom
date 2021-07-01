@@ -110,3 +110,11 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Specify document type
   - Remove duplicated body tag
   - Update dependencies
+- v5.0.0
+  - Add source folder to .gitignore
+  - Breaking: Add language configuration value
+  - Set font-display to swap
+  - Fix underline on icon hover
+  - Generate description from files
+  - Specify icon size in HTML
+  - Update Inter to 3.19
