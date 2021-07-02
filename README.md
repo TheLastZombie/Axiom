@@ -120,3 +120,6 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Update Inter to 3.19
 - v5.0.1
   - Update dependencies
+- v5.1.0
+  - Add Axiom version variable
+  - Make all packages optional

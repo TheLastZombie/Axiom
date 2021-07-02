@@ -4,11 +4,6 @@ const childProcess = require('child_process')
 const fs = require('fs')
 const path = require('path')
 
-const CleanCSS = require('clean-css')
-const { minify } = require('html-minifier')
-const marked = require('marked')
-const UglifyJS = require('uglify-js')
-
 const input = path.resolve('src')
 const output = path.resolve('dist')
 let assets = path.resolve('cfg', 'themes')
@@ -46,45 +41,60 @@ config.sites.forEach(x => {
   if (filesX.length) {
     console.log('  Generating ' + filesX.length + ' HTML documents from Markdown files...')
 
-    filesX.forEach(y => {
-      const infile = path.resolve(input, x.folder, y)
-      const outfile = path.resolve(output, x.folder, path.parse(y).name + '.html')
-      let title = x.pages.filter(z => z.file === path.parse(y).name)[0]
-      title = title ? title.title : path.parse(y).name
+    let marked
+    try {
+      marked = require('marked')
+    } catch (error) {
+      console.log('    marked is not installed, skipping...')
+    }
 
-      console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
+    if (marked) {
+      filesX.forEach(y => {
+        const infile = path.resolve(input, x.folder, y)
+        const outfile = path.resolve(output, x.folder, path.parse(y).name + '.html')
+        let title = x.pages.filter(z => z.file === path.parse(y).name)[0]
+        title = title ? title.title : path.parse(y).name
 
-      const outtext = idxHTML
-        .replace('<!-- LANGUAGE -->', config.language)
-        .replace('<!-- TITLE -->', config.title + ' · ' + x.title + ' · ' + title)
-        .replace('<!-- DESCRIPTION -->', fs.readFileSync(infile).toString().split('\n')[0].replace(/^#*\s*/, ''))
-        .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
-        .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
-        .replace('<!-- BOTTOM -->', config.footer.map(z => '<a' + (z['rel-me'] ? ' rel="me" ' : ' ') + 'href="' + z.link + '" title="' + z.title + '"><img src="' + z.icon + '" width="32" height="32" alt="' + z.title + '"></a>').join(''))
-        .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
+        console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
 
-      fs.writeFileSync(outfile, outtext)
-    })
+        const outtext = idxHTML
+          .replace('<!-- LANGUAGE -->', config.language)
+          .replace('<!-- TITLE -->', config.title + ' · ' + x.title + ' · ' + title)
+          .replace('<!-- DESCRIPTION -->', fs.readFileSync(infile).toString().split('\n')[0].replace(/^#*\s*/, ''))
+          .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
+          .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
+          .replace('<!-- BOTTOM -->', config.footer.map(z => '<a' + (z['rel-me'] ? ' rel="me" ' : ' ') + 'href="' + z.link + '" title="' + z.title + '"><img src="' + z.icon + '" width="32" height="32" alt="' + z.title + '"></a>').join(''))
+          .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
+          .replace('<!-- VERSION -->', require('./package').version)
+
+        fs.writeFileSync(outfile, outtext)
+      })
+    }
 
     console.log('  Generating ' + filesX.length + ' GMI documents from Markdown files...')
 
-    filesX.forEach(y => {
-      const infile = path.resolve(input, x.folder, y)
-      const outfile = path.resolve(output, x.folder, path.parse(y).name + '.gmi')
-      let title = x.pages.filter(z => z.file === path.parse(y).name)[0]
-      title = title ? title.title : path.parse(y).name
+    if (!process.env.PATH.split(path.delimiter).some(x => fs.existsSync(path.join(x, 'md2gemini')))) {
+      console.log('    md2gemini is not installed, skipping...')
+    } else {
+      filesX.forEach(y => {
+        const infile = path.resolve(input, x.folder, y)
+        const outfile = path.resolve(output, x.folder, path.parse(y).name + '.gmi')
+        let title = x.pages.filter(z => z.file === path.parse(y).name)[0]
+        title = title ? title.title : path.parse(y).name
 
-      console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
+        console.log('    Generating ' + path.basename(outfile) + ' from ' + path.basename(infile) + '...')
 
-      const outtext = idxGMI
-        .replace('<!-- TITLE -->', config.title + ' · ' + x.title + ' · ' + title)
-        .replace('<!-- LEFT -->', config.sites.map(z => '=> gemini://' + z.host + ' ' + z.title).join('\n'))
-        .replace('<!-- CENTER -->', childProcess.execFileSync('md2gemini', ['-l', 'copy', infile]).toString().replace(/\.html/g, '.gmi').trim())
-        .replace('<!-- BOTTOM -->', config.footer.map(z => '=> ' + z.link + ' ' + z.title).join('\n'))
-        .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '=> ' + z.file + '.gmi' + ' ' + z.title).join('\n'))
+        const outtext = idxGMI
+          .replace('<!-- TITLE -->', config.title + ' · ' + x.title + ' · ' + title)
+          .replace('<!-- LEFT -->', config.sites.map(z => '=> gemini://' + z.host + ' ' + z.title).join('\n'))
+          .replace('<!-- CENTER -->', childProcess.execFileSync('md2gemini', ['-l', 'copy', infile]).toString().replace(/\.html/g, '.gmi').trim())
+          .replace('<!-- BOTTOM -->', config.footer.map(z => '=> ' + z.link + ' ' + z.title).join('\n'))
+          .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '=> ' + z.file + '.gmi' + ' ' + z.title).join('\n'))
+          .replace('<!-- VERSION -->', require('./package').version)
 
-      fs.writeFileSync(outfile, outtext)
-    })
+        fs.writeFileSync(outfile, outtext)
+      })
+    }
   }
 
   if (filesY.length) {
@@ -113,51 +123,78 @@ config.sites.forEach(x => {
 
   console.log('  Minifying HTML files...')
 
-  fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
-    if (path.extname(y) === '.html' || path.extname(y) === '.htm') {
-      const file = path.resolve(output, x.folder, y)
+  let minify
+  try {
+    minify = require('html-minifier').minify
+  } catch (error) {
+    console.log('    html-minifier is not installed, skipping...')
+  }
 
-      console.log('    Minifying file ' + y + '...')
+  if (minify) {
+    fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
+      if (path.extname(y) === '.html' || path.extname(y) === '.htm') {
+        const file = path.resolve(output, x.folder, y)
 
-      const sizepre = fs.statSync(file).size
-      fs.writeFileSync(file, minify(fs.readFileSync(file).toString(), {
-        collapseWhitespace: true
-      }))
-      const sizepost = fs.statSync(file).size
+        console.log('    Minifying file ' + y + '...')
 
-      console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
-    }
-  })
+        const sizepre = fs.statSync(file).size
+        fs.writeFileSync(file, minify(fs.readFileSync(file).toString(), {
+          collapseWhitespace: true
+        }))
+        const sizepost = fs.statSync(file).size
+
+        console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
+      }
+    })
+  }
 
   console.log('  Minifying CSS files...')
 
-  fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
-    if (path.extname(y) === '.css') {
-      const file = path.resolve(output, x.folder, y)
+  let CleanCSS
+  try {
+    CleanCSS = require('clean-css')
+  } catch (error) {
+    console.log('    clean-css is not installed, skipping...')
+  }
 
-      console.log('    Minifying file ' + y + '...')
+  if (CleanCSS) {
+    fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
+      if (path.extname(y) === '.css') {
+        const file = path.resolve(output, x.folder, y)
 
-      const sizepre = fs.statSync(file).size
-      fs.writeFileSync(file, new CleanCSS().minify(fs.readFileSync(file).toString()).styles)
-      const sizepost = fs.statSync(file).size
+        console.log('    Minifying file ' + y + '...')
 
-      console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
-    }
-  })
+        const sizepre = fs.statSync(file).size
+        fs.writeFileSync(file, new CleanCSS().minify(fs.readFileSync(file).toString()).styles)
+        const sizepost = fs.statSync(file).size
+
+        console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
+      }
+    })
+  }
 
   console.log('  Minifying JS files...')
 
-  fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
-    if (path.extname(y) === '.js') {
-      const file = path.resolve(output, x.folder, y)
+  let UglifyJS
+  try {
+    UglifyJS = require('uglify-js')
+  } catch (error) {
+    console.log('    uglify-js is not installed, skipping...')
+  }
 
-      console.log('    Minifying file ' + y + '...')
+  if (UglifyJS) {
+    fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
+      if (path.extname(y) === '.js') {
+        const file = path.resolve(output, x.folder, y)
 
-      const sizepre = fs.statSync(file).size
-      fs.writeFileSync(file, UglifyJS.minify(fs.readFileSync(file).toString()).code)
-      const sizepost = fs.statSync(file).size
+        console.log('    Minifying file ' + y + '...')
 
-      console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
-    }
-  })
+        const sizepre = fs.statSync(file).size
+        fs.writeFileSync(file, UglifyJS.minify(fs.readFileSync(file).toString()).code)
+        const sizepost = fs.statSync(file).size
+
+        console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
+      }
+    })
+  }
 })
