@@ -64,7 +64,11 @@ config.sites.forEach(x => {
           .replace('<!-- TITLE -->', config.title + ' · ' + x.title + ' · ' + title)
           .replace('<!-- DESCRIPTION -->', fs.readFileSync(infile).toString().split('\n')[0].replace(/^#*\s*/, ''))
           .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
-          .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString()))
+          .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString(), {
+            headerIds: false,
+            smartLists: true,
+            smartypants: true
+          }))
           .replace('<!-- BOTTOM -->', config.footer.map(z => '<a' + (z['rel-me'] ? ' rel="me" ' : ' ') + 'href="' + z.link + '" title="' + z.title + '"><img src="' + z.icon + '" width="32" height="32" alt="' + z.title + '"></a>').join(''))
           .replace('<!-- RIGHT -->', x.pages.filter(z => !z.hidden).map(z => '<p><a href="' + z.file + '.html' + '">' + z.title + '</a></p>').join(''))
           .replace('<!-- VERSION -->', require('./package').version)

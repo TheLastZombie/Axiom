@@ -128,3 +128,6 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
   - Improve minification for HTML and SVG files
   - Log processing time
   - Add package name to package.json
+- v5.2.1
+  - Improve generation of HTML files
+  - Add package name to package-lock.json
