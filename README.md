@@ -123,3 +123,8 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
 - v5.1.0
   - Add Axiom version variable
   - Make all packages optional
+- v5.2.0
+  - Add configuration folder to .gitignore
+  - Improve minification for HTML and SVG files
+  - Log processing time
+  - Add package name to package.json

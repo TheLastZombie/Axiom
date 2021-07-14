@@ -1,5 +1,6 @@
 {
-  "version": "5.1.0",
+  "name": "axiom",
+  "version": "5.2.0",
   "main": "index.js",
   "scripts": {
     "start": "node ."

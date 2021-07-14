@@ -1,3 +1,7 @@
+cfg/themes/axiom/dist/*
+!cfg/themes/axiom/dist/Inter-*.woff
+!cfg/themes/axiom/dist/style.css
+
 dist/*
 !dist/.gitkeep
 
