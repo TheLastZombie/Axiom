@@ -131,3 +131,8 @@ To modify a theme, have a look at `cfg/themes/theme/index.html` and `cfg/themes/
 - v5.2.1
   - Improve generation of HTML files
   - Add package name to package-lock.json
+- v5.2.2
+  - Fix code blocks not overflowing
+  - Fix package version in package-lock.json
+  - Revert: Add package name to package-lock.json
+  - Specify minimum required Node.js version

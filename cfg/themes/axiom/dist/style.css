@@ -95,6 +95,10 @@ a:hover img {
 	filter: invert(1);
 }
 
+pre {
+	overflow: auto;
+}
+
 ul,
 ol {
 	margin: 0.5em auto;

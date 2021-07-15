@@ -1,6 +1,6 @@
 {
   "name": "axiom",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "main": "index.js",
   "scripts": {
     "start": "node ."
@@ -10,5 +10,8 @@
     "html-minifier": "^4.0.0",
     "marked": "^2.0.0",
     "uglify-js": "^3.13.0"
+  },
+  "engines": {
+    "node": ">=12.10.0"
   }
 }
