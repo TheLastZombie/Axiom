@@ -220,6 +220,31 @@ config.sites.forEach(x => {
       }
     })
   }
+
+  console.log('  Minifying SVG files...')
+
+  let optimize
+  try {
+    optimize = require('svgo').optimize
+  } catch (error) {
+    console.log('    svgo is not installed, skipping...')
+  }
+
+  if (optimize) {
+    fs.readdirSync(path.resolve(output, x.folder)).forEach(y => {
+      if (path.extname(y) === '.svg') {
+        const file = path.resolve(output, x.folder, y)
+
+        console.log('    Minifying file ' + y + '...')
+
+        const sizepre = fs.statSync(file).size
+        fs.writeFileSync(file, optimize(fs.readFileSync(file).toString()).data)
+        const sizepost = fs.statSync(file).size
+
+        console.log('      Reduced file size from ' + sizepre + ' B to ' + sizepost + ' B.')
+      }
+    })
+  }
 })
 
 const timepost = new Date()
