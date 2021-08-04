@@ -6,7 +6,7 @@ Axiom is a simple static site generator powering my personal website and its sub
 
 - Optimized for easily navigating between multiple domains.
 - A simple, straight-forward theme inspired by [Oscean](https://wiki.xxiivv.com/site/oscean.html).
-- Automatic minification of HTML, CSS and JS files via [HTML Minifier](https://kangax.github.io/html-minifier/), [clean-css](https://jakubpawlowicz.github.io/clean-css/) and [UglifyJS](http://lisperator.net/uglifyjs/).
+- Automatic minification of HTML, CSS, JS and SVG files via [HTML Minifier](https://kangax.github.io/html-minifier/), [clean-css](https://jakubpawlowicz.github.io/clean-css/), [UglifyJS](http://lisperator.net/uglifyjs/) and [SVGO](https://github.com/svg/svgo#readme).
 - Conversion to and generation of GMI files for [Gemini](https://gemini.circumlunar.space/).
 
 ## Installation

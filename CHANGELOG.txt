@@ -174,3 +174,4 @@ v5.3.0
 Unreleased
 
 - Move changelog to own file
+- Add SVGO to documentation
