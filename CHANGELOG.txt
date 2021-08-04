@@ -175,3 +175,4 @@ Unreleased
 
 - Move changelog to own file
 - Add SVGO to documentation
+- Update dependencies
