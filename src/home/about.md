@@ -2,7 +2,7 @@
 
 ![It's me!](me.jpg)
 
-My name's Sunny (or Eric, whichever works), and I'm broadcasting this from a Raspberry Pi, located near the Austria-Germany border.
+My name's Sunny (or Eric, whichever works), and I'm broadcasting this from ~~a Raspberry Pi, located near the Austria-Germany border~~ [Vercel](https://vercel.com/), which is actually pretty damn cool once you get the hang of it.
 
 I usually work as an [application developer](code.html). Aside from that, I occasionally do [graphic design](design.html), video editing, [photography](photos.html) and more. I'm also into a lot of old technology (ZX Spectrum, MS-DOS, what have you) and console hacking (the cool kids call this "homebrew", right?).
 
@@ -13,7 +13,7 @@ Furthermore, I'm a strong advocate for:
 - privacy
   - no more [Facebook, Google, Microsoft, Apple or Amazon](https://gafam.info/) accounts
 - a greener planet
-  - I highly recommend reading [The Uninhabitable Earth](https://openlibrary.org/books/OL28213233M/The_Uninhabitable_Earth)
+  - I highly recommend reading [The Uninhabitable Earth](https://openlibrary.org/books/OL28213233M/The_Uninhabitable_Earth) and [All The Right Words On Climate Have Already Been Said](https://therealsarahmiller.substack.com/p/all-the-right-words-on-climate-have)
 
 On the more "passive" side, I sometimes [listen to music](https://www.last.fm/user/rcrsch), [watch a movie](https://letterboxd.com/roesch/) or [TV show](https://trakt.tv/users/roesch) or [play some games](https://steamcommunity.com/id/rcrsch).
 
