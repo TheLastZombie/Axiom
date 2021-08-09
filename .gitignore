@@ -1,10 +1,4 @@
-cfg/themes/axiom/dist/*
-!cfg/themes/axiom/dist/style.css
-
 dist/*
 !dist/.gitkeep
-
-src/*
-!src/home/index.md
 
 node_modules

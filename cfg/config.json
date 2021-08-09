@@ -1,27 +1,67 @@
 {
-	"title": "Title",
+	"title": "RXYZ",
 	"language": "en",
 	"theme": "axiom",
 	"sites": [
 		{
 			"title": "Home",
 			"folder": "home",
-			"host": "example.com",
+			"host": "eric.jetzt",
 			"pages": [
-				{
-					"title": "Home",
-					"file": "index",
-					"hidden": false
-				}
+				{ "title": "Home", "file": "index", "hidden": false },
+				{ "title": "Code", "file": "code", "hidden": false },
+				{ "title": "Design", "file": "design", "hidden": false },
+				{ "title": "Photos", "file": "photos", "hidden": false },
+				{ "title": "Sounds", "file": "sounds", "hidden": false },
+				{ "title": "Now", "file": "now", "hidden": false },
+				{ "title": "About", "file": "about", "hidden": false }
+			]
+		},
+		{
+			"title": "Blog",
+			"folder": "blog",
+			"host": "blog.eric.jetzt",
+			"pages": [
+				{ "title": "Home", "file": "index", "hidden": false },
+				{ "title": "Childhood", "file": "childhood", "hidden": false },
+				{ "title": "Addendums", "file": "addendums", "hidden": false },
+				{ "title": "Hibernation", "file": "hibernation", "hidden": false },
+				{ "title": "Consumer", "file": "consumer", "hidden": false }
+			]
+		},
+		{
+			"title": "Wiki",
+			"folder": "wiki",
+			"host": "wiki.eric.jetzt",
+			"pages": [
+				{ "title": "Home", "file": "index", "hidden": false },
+				{ "title": "天気予報", "file": "asutenki", "hidden": false },
+				{ "title": "Code Snippets", "file": "code", "hidden": false },
+				{ "title": "Gift Tapes", "file": "gift-tapes", "hidden": false },
+				{ "title": "UniKat?ja!", "file": "unikatja", "hidden": false },
+				{ "title": "YAbeats", "file": "yabeats", "hidden": false }
+			]
+		},
+		{
+			"title": "Labs",
+			"folder": "labs",
+			"host": "labs.eric.jetzt",
+			"pages": [
+				{ "title": "Home", "file": "index", "hidden": false },
+				{ "title": "Last.fm iceberg", "file": "iceberg", "hidden": false }
 			]
 		}
 	],
 	"footer": [
-		{
-			"title": "Link",
-			"link": "https://example.com",
-			"icon": "https://fonts.gstatic.com/s/i/materialicons/home/v10/24px.svg",
-			"rel-me": false
-		}
+		{ "title": "Twitter", "link": "https://twitter.com/rcrsch", "icon": "twitter.svg", "rel-me": false },
+		{ "title": "Reddit", "link": "https://www.reddit.com/user/ente3000", "icon": "reddit.svg", "rel-me": false },
+		{ "title": "Mastodon", "link": "https://mastodon.social/@rcrsch", "icon": "mastodon.svg", "rel-me": true },
+		{ "title": "GitHub", "link": "https://github.com/TheLastZombie", "icon": "github.svg", "rel-me": false },
+		{ "title": "Last.fm", "link": "https://www.last.fm/user/rcrsch", "icon": "lastfm.svg", "rel-me": false },
+		{ "title": "Spotify", "link": "https://open.spotify.com/user/eric.roesch", "icon": "spotify.svg", "rel-me": false },
+		{ "title": "Trakt", "link": "https://trakt.tv/users/roesch", "icon": "trakt.svg", "rel-me": false },
+		{ "title": "Letterboxd", "link": "https://letterboxd.com/roesch/", "icon": "letterboxd.svg", "rel-me": false },
+		{ "title": "Steam", "link": "https://steamcommunity.com/id/rcrsch", "icon": "steam.svg", "rel-me": false },
+		{ "title": "Webring", "link": "https://webring.xxiivv.com/#random", "icon": "webring.svg", "rel-me": false }
 	]
 }
