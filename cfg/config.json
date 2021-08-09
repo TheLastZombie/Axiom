@@ -41,15 +41,6 @@
 				{ "title": "UniKat?ja!", "file": "unikatja", "hidden": false },
 				{ "title": "YAbeats", "file": "yabeats", "hidden": false }
 			]
-		},
-		{
-			"title": "Labs",
-			"folder": "labs",
-			"host": "labs.eric.jetzt",
-			"pages": [
-				{ "title": "Home", "file": "index", "hidden": false },
-				{ "title": "Last.fm iceberg", "file": "iceberg", "hidden": false }
-			]
 		}
 	],
 	"footer": [
