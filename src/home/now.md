@@ -10,7 +10,7 @@ This page has last been updated on the 11th of August, 2021.
 
 Other languages I want to get into include [Ruby](https://www.ruby-lang.org/) (which, I hope, will one day replace back-end JavaScript for me) and COBOL (because I want to get a feeling of "the other end of the spectrum" if you will, and see if I could still get anything useful out of it today).
 
-I also want to (finally) start using front-end frameworks, and have started getting into [React](https://reactjs.org/) as of late.
+I also want to (finally) start using front-end frameworks, and have started getting into [React](https://reactjs.org/) and [Svelte](https://svelte.dev/) as of late.
 
 ### Languages II
 
