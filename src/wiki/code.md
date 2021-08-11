@@ -245,3 +245,17 @@ example.com {
 ```
 
 See the [Caddy documentation](https://caddyserver.com/docs/caddyfile/directives/import) for details.
+
+#### Set up X11 on WSL 2
+
+First, start an X11 server on the host machine, for example:
+
+```CMD
+vcxsrv.exe -ac -multiwindow
+```
+
+Then, update the DISPLAY variable with the appropriate IP address:
+
+```Bash
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+```
