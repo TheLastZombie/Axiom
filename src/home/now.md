@@ -2,13 +2,15 @@
 
 Congratulations, you just found what's probably the most personal page on this domain – my [now page](https://nownownow.com/about). It's kind of a mixture of things I'm doing right now and things I want to do sooner or later.
 
-This page has last been updated on the 3rd of August, 2021.
+This page has last been updated on the 11th of August, 2021.
 
 ### Languages I
 
 99% of the time I write JavaScript, and while it gets the job done most of the time, there just are things it can not do. Because of this, I'm slowly (but surely) starting to learn [Rust](https://www.rust-lang.org/) – it seems to have the perfect balance between low-level languages like C and high-level ones like JavaScript.
 
 Other languages I want to get into include [Ruby](https://www.ruby-lang.org/) (which, I hope, will one day replace back-end JavaScript for me) and COBOL (because I want to get a feeling of "the other end of the spectrum" if you will, and see if I could still get anything useful out of it today).
+
+I also want to (finally) start using front-end frameworks, and have started getting into [React](https://reactjs.org/) as of late.
 
 ### Languages II
 
