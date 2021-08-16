@@ -14,6 +14,16 @@ Taken from this [CSS-Tricks article](https://css-tricks.com/ids-cannot-start-wit
 
 ### HTML
 
+#### Fix video thumbnails on iOS devices
+
+In some cases, iOS devices will not display video thumbnails. To fix this, add `#t=0.001` to `src`, for example:
+
+```HTML
+<video src="video.mp4#t=0.001"></video>
+```
+
+Thanks to [Stanko Tadić](https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/).
+
 #### Theme-based stylesheets
 
 ```HTML
