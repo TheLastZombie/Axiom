@@ -163,7 +163,7 @@ Here, `$$foo` resolves to `$bar`!
 
 WinSCP → Options → Preferences → Applications → PuTTY/Terminal client path:
 
-```
+```CMD
 "zoc.exe" /CONNECT:!U:!P@!@:!# "/RUN:%USERPROFILE%\Documents\ZOC8 Files\REXX\cd.zrx" "/RUNARG:!/"
 ```
 
@@ -173,11 +173,20 @@ WinSCP → Options → Preferences → Applications → PuTTY/Terminal client pa
 CALL ZocSend "cd '"ARG(1)"'^M"
 ```
 
+#### Copy input to output on Linux
+
+```Bash
+cat input > output
+cp input output
+dd if=input of=output
+tee < input > output
+```
+
 #### Change video framerate without interpolation or re-encoding
 
 To convert a video with X FPS to a video with Y FPS, divide X by Y, and use the result like so:
 
-```
+```Bash
 ffmpeg -itsscale X/Y -i input.mp4 -c copy output.mp4
 ```
 
@@ -195,20 +204,20 @@ GRANT ALL PRIVILEGES ON DATABASE database TO user;
 
 First, press CTRL+Z on the running command. Then:
 
-```
+```Bash
 bg
 disown -h
 ```
 
 To bring it back after, for example, logging out and back in:
 
-```
+```Bash
 fg
 ```
 
 #### Don't kill user systemd units when logging out
 
-```
+```Bash
 loginctl enable-linger
 ```
 
@@ -220,7 +229,7 @@ Remove-Item -Recurse $env:LOCALAPPDATA/Packages/CanonicalGroupLimited.UbuntuonWi
 
 #### Install Docker on Raspberry Pi
 
-```
+```Bash
 curl https://get.docker.com | sh
 sudo usermod -aG docker $USER
 sudo reboot
@@ -230,7 +239,7 @@ sudo reboot
 
 Right-click on any .URL file, select "Open With", "Other Application" and enter the following in the "Enter a custom command..." field:
 
-```
+```Bash
 sh -c "cat %F | grep URL= | cut -d '=' -f2- | xargs xdg-open"
 ```
 
