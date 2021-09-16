@@ -67,6 +67,16 @@ const fs = require("fs");
 process.env.PATH.split(path.delimiter).some(x => fs.existsSync(path.join(x, "node")));
 ```
 
+#### Convert duration to seconds
+
+```JS
+input.split(":").reduce((p, c) => p * 60 + Number(c));
+
+//       1 -> 1
+//    1:00 -> 60
+// 1:00:00 -> 3600
+```
+
 #### Expand Bootstrap accordions via URL
 
 ```JS
