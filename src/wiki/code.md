@@ -288,3 +288,12 @@ Then, update the DISPLAY variable with the appropriate IP address:
 ```Bash
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 ```
+
+#### Use video as wallpaper on Linux
+
+```Bash
+xwinwrap -fdt -g 1920x1080      -ni -- mpv -wid WID --loop  LEFT.MP4 &
+xwinwrap -fdt -g 1920x1080+1920 -ni -- mpv -wid WID --loop RIGHT.MP4 &
+```
+
+This example is optimized for my two-minitor setup and uses [xwinwrap](https://github.com/mmhobi7/xwinwrap) as well as [mpv](https://mpv.io/).
