@@ -250,7 +250,7 @@ sudo reboot
 Right-click on any .URL file, select "Open With", "Other Application" and enter the following in the "Enter a custom command..." field:
 
 ```Bash
-sh -c "cat %F | grep URL= | cut -d '=' -f2- | xargs xdg-open"
+sh -c "cat %F | grep URL= | cut -d '=' -f2- | xargs -n 1 xdg-open"
 ```
 
 #### Pin retweets to Twitter profile
