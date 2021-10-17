@@ -2,7 +2,7 @@
 
 ### [Automate: Material redesign](automate.png)
 
-Up until a few years ago, I was pretty active in the Android customization community, and [Automate](https://llamalab.com/automate/) still used a [Holo](https://android-developers.googleblog.com/2012/01/holo-everywhere.html)-like design (in fact, the screenshots on their website still do).
+Up until a few years ago, I was pretty active in the Android customization community, and [Automate](https://llamalab.com/automate/) still used a [Holo](https://android-developers.googleblog.com/2012/01/holo-everywhere.html)-like design.
 
 I thought it would be interesting to see how Automate would look like in shiny, new [Material Design](https://material.io/), so I posted a simple, single-screen mockup to its Google+ community (left).
 
