@@ -1,5 +1,5 @@
 cfg/themes/axiom/dist/*
-!cfg/themes/axiom/dist/style.css
+!cfg/themes/axiom/dist/*.css
 
 dist/*
 !dist/.gitkeep

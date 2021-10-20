@@ -51,6 +51,13 @@ config.sites.forEach(x => {
     }
 
     if (marked) {
+      let hljs
+      try {
+      	hljs = require('highlight.js')
+      } catch (error) {
+      	console.log('    highlight.js is not installed, not highlighting...')
+      }
+
       filesX.forEach(y => {
         const infile = path.resolve(input, x.folder, y)
         const outfile = path.resolve(output, x.folder, path.parse(y).name + '.html')
@@ -66,6 +73,8 @@ config.sites.forEach(x => {
           .replace('<!-- LEFT -->', config.sites.map(z => '<p><a href="https://' + z.host + '">' + z.title + '</a></p>').join(''))
           .replace('<!-- CENTER -->', marked(fs.readFileSync(infile).toString(), {
             headerIds: false,
+            highlight: hljs && function (code, lang) { return hljs.highlight(code, { language: lang }).value },
+            langPrefix: hljs && 'hljs language-',
             smartLists: true,
             smartypants: true
           }))
