@@ -4,7 +4,4 @@ cfg/themes/axiom/dist/*
 dist/*
 !dist/.gitkeep
 
-src/*
-!src/home/index.md
-
 node_modules
