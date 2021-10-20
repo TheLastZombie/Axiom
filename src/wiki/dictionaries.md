@@ -8,7 +8,7 @@ To get an overview of the available dictionaries, the following sources are curr
 
 - [Yomichan](https://foosoft.net/projects/yomichan/#dictionaries)
 - [Yomichan Import](https://foosoft.net/projects/yomichan-import/)
-- [10ten Japanese Reader](moz-extension://86321be0-05dc-4b88-a962-dba6f18e4187/options.html#kanji-reference-list)
+- [10ten Japanese Reader](https://github.com/birchill/10ten-ja-reader#readme)
 
 ## Dictionaries
 
@@ -36,20 +36,20 @@ To download most of the dictionaries above, one could, for example, use the foll
 
 ```Bash
 # JMdict/EDICT
-ftp://ftp.edrdg.org/pub/Nihongo/JMdict			http://ftp.edrdg.org/pub/Nihongo/JMdict
-ftp://ftp.edrdg.org/pub/Nihongo/JMdict_e		http://ftp.edrdg.org/pub/Nihongo/JMdict_e
-ftp://ftp.edrdg.org/pub/Nihongo/JMdict_e_examp	http://ftp.edrdg.org/pub/Nihongo/JMdict_e_examp
-ftp://ftp.edrdg.org/pub/Nihongo/edict			http://ftp.edrdg.org/pub/Nihongo/edict
-ftp://ftp.edrdg.org/pub/Nihongo/edict2			http://ftp.edrdg.org/pub/Nihongo/edict2
+ftp://ftp.edrdg.org/pub/Nihongo/JMdict         http://ftp.edrdg.org/pub/Nihongo/JMdict
+ftp://ftp.edrdg.org/pub/Nihongo/JMdict_e       http://ftp.edrdg.org/pub/Nihongo/JMdict_e
+ftp://ftp.edrdg.org/pub/Nihongo/JMdict_e_examp http://ftp.edrdg.org/pub/Nihongo/JMdict_e_examp
+ftp://ftp.edrdg.org/pub/Nihongo/edict          http://ftp.edrdg.org/pub/Nihongo/edict
+ftp://ftp.edrdg.org/pub/Nihongo/edict2         http://ftp.edrdg.org/pub/Nihongo/edict2
 
 # ENAMDICT/JMnedict
-ftp://ftp.edrdg.org/pub/Nihongo/enamdict		http://ftp.edrdg.org/pub/Nihongo/enamdict
-ftp://ftp.edrdg.org/pub/Nihongo/JMnedict.xml	http://ftp.edrdg.org/pub/Nihongo/JMnedict.xml
+ftp://ftp.edrdg.org/pub/Nihongo/enamdict       http://ftp.edrdg.org/pub/Nihongo/enamdict
+ftp://ftp.edrdg.org/pub/Nihongo/JMnedict.xml   http://ftp.edrdg.org/pub/Nihongo/JMnedict.xml
 
 # KANJIDIC
-ftp://ftp.edrdg.org/pub/Nihongo/kanjidic2.xml	http://ftp.edrdg.org/pub/Nihongo/kanjidic2.xml
-ftp://ftp.edrdg.org/pub/Nihongo/kanjidic		http://ftp.edrdg.org/pub/Nihongo/kanjidic
-ftp://ftp.edrdg.org/pub/Nihongo/kanjd212		http://ftp.edrdg.org/pub/Nihongo/kanjd212
+ftp://ftp.edrdg.org/pub/Nihongo/kanjidic2.xml  http://ftp.edrdg.org/pub/Nihongo/kanjidic2.xml
+ftp://ftp.edrdg.org/pub/Nihongo/kanjidic       http://ftp.edrdg.org/pub/Nihongo/kanjidic
+ftp://ftp.edrdg.org/pub/Nihongo/kanjd212       http://ftp.edrdg.org/pub/Nihongo/kanjd212
 
 # Kanjium
 https://github.com/mifunetoshiro/kanjium/raw/master/data/kanjidb.sqlite
