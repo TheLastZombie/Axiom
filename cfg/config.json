@@ -37,6 +37,7 @@
 				{ "title": "Home", "file": "index", "hidden": false },
 				{ "title": "天気予報", "file": "asutenki", "hidden": false },
 				{ "title": "Code Snippets", "file": "code", "hidden": false },
+				{ "title": "Dictionaries", "file": "dictionaries", "hidden": false },
 				{ "title": "Gift Tapes", "file": "gift-tapes", "hidden": false },
 				{ "title": "UniKat?ja!", "file": "unikatja", "hidden": false },
 				{ "title": "YAbeats", "file": "yabeats", "hidden": false }
